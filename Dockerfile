@@ -8,5 +8,5 @@ ADD  https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.
 ADD https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.7/bin/apache-tomcat-10.1.7.tar.gz .
 RUN tar -xzvf openjdk-11+28_linux-x64_bin.tar.gz 
 RUN tar -xzvf apache-tomcat-10.0.7.tar.gz
-COPY target/sailor.war ./apache-tomcat-10.0.7/webapps
+COPY target/speed.war ./apache-tomcat-10.0.7/webapps
 CMD ( "./apache-tomcat-10.0.7/bin/startup.sh" )

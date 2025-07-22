@@ -10,4 +10,4 @@ RUN tar -xzvf apache-tomcat-9.0.107.tar.gz
 COPY target/speed.war ./apache-tomcat-9.0.107/webapps
 COPY run.sh .
 RUN chmod u+x run.sh
-CMD ( "sh", "run.sh" )
+ENTRYPOINT("./run.sh" )

@@ -9,5 +9,5 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.107/bin/apache-tomcat-9.0.107.
 RUN tar -xzvf apache-tomcat-9.0.107.tar.gz
 COPY target/speed.war ./apache-tomcat-9.0.107/webapps
 COPY run.sh .
-RUN chmod 660 run.sh
-ENTRYPOINT("run.sh")
+RUN chmod u+x run.sh
+ENTRYPOINT["./run.sh"]

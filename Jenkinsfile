@@ -22,5 +22,15 @@ pipeline{
                 sh 'tar -xzvf apache-tomcat-9.0.115.tar.gz'
             }
         }
+        stage('deploying to tomcat'){
+            steps{
+                sh 'cp target/sailor1.war apache-tomcat-9.0.115/webapps/'
+            }
+        }
+        stage('stating tomcat'){
+            steps{
+                sh 'apache-tomcat-9.0.115/bin/startup.sh'
+            }
+        }
     }
 }

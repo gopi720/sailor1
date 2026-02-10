@@ -16,5 +16,11 @@ pipeline{
                 sh 'mvn clean verify'
             }
         }
+        stage('downloading_tomcat'){
+            steps{
+                sh 'wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz'
+                sh 'tar -xzvf apache-tomcat-9.0.115.tar.gz'
+            }
+        }
     }
 }

@@ -5,10 +5,14 @@ pipeline{
     tools{
         maven 'maven'
     }
+    environment{
+        branch = "main"
+    }
     stages{
         stage('checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/gopi720/sailor1.git'
+                echo ${branch}
+                git branch: ${branch}, url: 'https://github.com/gopi720/sailor1.git'
             }
         }
         stage('build'){

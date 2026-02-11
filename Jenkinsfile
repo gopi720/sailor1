@@ -8,6 +8,10 @@ pipeline{
     environment{
         branch = "main"
     }
+    parameters{
+        string 'TARGET_BRANCH'
+        choice choices:['main', 'dev', 'test'], name: 'BUILD_BRANCH'
+    }
     stages{
         stage('checkout'){
             steps{

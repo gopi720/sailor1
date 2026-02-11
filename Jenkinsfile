@@ -24,7 +24,7 @@ pipeline{
         }
         stage('deploying to tomcat'){
             steps{
-                sh 'cp target/sailor.war apache-tomcat-9.0.115/webapps/'
+                sh 'cp target/speed.war apache-tomcat-9.0.115/webapps/'
             }
         }
         stage('stating tomcat'){

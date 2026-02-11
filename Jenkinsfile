@@ -32,7 +32,9 @@ pipeline{
         }
         stage('deploying to tomcat'){
             when{
-                paramas.TARGET_BRANCH == 'main'
+                expression {
+                    paramas.TARGET_BRANCH == 'main'
+                }
             }
             steps{
                 sh 'cp target/speed.war apache-tomcat-9.0.115/webapps/'

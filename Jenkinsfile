@@ -16,7 +16,7 @@ pipeline{
         stage('checkout'){
             steps{
                 echo "${branch}"
-                git branch: "${branch}", url: 'https://github.com/gopi720/sailor1.git'
+                git branch: params.BUILD_BRANCH, url: 'https://github.com/gopi720/sailor1.git'
             }
         }
         stage('build'){
@@ -31,6 +31,9 @@ pipeline{
             }
         }
         stage('deploying to tomcat'){
+            when{
+                paramas.TARGET_BRANCH == 'main'
+            }
             steps{
                 sh 'cp target/speed.war apache-tomcat-9.0.115/webapps/'
             }

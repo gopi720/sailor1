@@ -11,7 +11,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                echo ${branch}
+                echo "${branch}"
                 git branch: ${branch}, url: 'https://github.com/gopi720/sailor1.git'
             }
         }

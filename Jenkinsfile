@@ -33,7 +33,7 @@ pipeline{
         stage('deploying to tomcat'){
             when{
                 expression {
-                    paramas.TARGET_BRANCH == 'main'
+                    params.TARGET_BRANCH == 'main'
                 }
             }
             steps{
